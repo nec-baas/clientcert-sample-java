@@ -1,0 +1,29 @@
+group 'com.nec.baas.client_cert'
+version '7.0.0'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "com.nec.baas.client_cert.Main"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+    google()
+}
+
+dependencies {
+    implementation 'com.nec.baas:baas-client-core:7.0.0'
+}
+
+allprojects {
+    tasks.withType(JavaCompile) {
+        it.options.encoding = 'UTF-8'
+    }
+}
+
+wrapper {
+    gradleVersion = '4.6'
+}
